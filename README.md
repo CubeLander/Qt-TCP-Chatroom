@@ -1,2 +1,28 @@
-# Qt-TCP-Chatroom
-A simple qt tcp chatroom to learn bacics and networking in qt
+# Qt Chatroom
+我制作了一个简单qt聊天室软件，实现了最基础的功能。
+这个项目是我在Windows Visual Studio联合Qt开发的第一个项目，也是我在Github上提交的第一个项目
+
+# 其中遇到的困难
+## 配置Windows VS-Qt环境
+请参考我的WPS文档：
+【金山文档 | WPS云文档】 Windows x64配置VS中的Qt6.8.0开发环境
+https://kdocs.cn/l/cumYTrgBZic1
+## VS-Qt的中文报错问题
+## TCP粘包问题的解决
+TCP持续链接是一个消息流，其中socket接口无法分辨消息的结束。
+因此我们需要设计一个简单的软件层协议，用来把内容从socket收到的字节流当中解析出来。
+
+# 未来想要加入的特性
+- 1.把服务器和客户端使用的tcp封包/解包接口作为一个公共方法和接口供二者调用，而不是分别实现在服务器和客户端的代码里
+- 2.加入对图片/声音/视频等多媒体的支持。
+- 3.加入简单的登录系统，让服务器在本地保存用户账户列表
+
+# 参考资料
+## 《Qt5开发与实例 第三版》
+我使用了其中的tcp服务器设计框架，但是里面的代码是错的，我在此基础上优化了内部代码和实现逻辑
+
+不要看国内过时的书。
+## Qt官方文档
+https://doc.qt.io/qt-6/index.html
+
+参考了其中fortune server和fortune client的示例代码，还有其中的方法讲解，这都很好用。
