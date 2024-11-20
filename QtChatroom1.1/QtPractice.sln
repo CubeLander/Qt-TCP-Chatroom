@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtServer", "QtChatroom\QtChatroom.vcxproj", "{3974859B-394A-4DA1-915C-5344DAC32000}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtClient", "QtClient\QtClient.vcxproj", "{26B8BC0B-779C-415B-8FA4-9ECB146A4635}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{1690AE9F-16BA-434E-9808-D99068F69F2A}"
+	ProjectSection(SolutionItems) = preProject
+		protocol.cpp = protocol.cpp
+		protocol.h = protocol.h
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3974859B-394A-4DA1-915C-5344DAC32000}.Debug|x64.ActiveCfg = Debug|x64
+		{3974859B-394A-4DA1-915C-5344DAC32000}.Debug|x64.Build.0 = Debug|x64
+		{3974859B-394A-4DA1-915C-5344DAC32000}.Release|x64.ActiveCfg = Release|x64
+		{3974859B-394A-4DA1-915C-5344DAC32000}.Release|x64.Build.0 = Release|x64
+		{26B8BC0B-779C-415B-8FA4-9ECB146A4635}.Debug|x64.ActiveCfg = Debug|x64
+		{26B8BC0B-779C-415B-8FA4-9ECB146A4635}.Debug|x64.Build.0 = Debug|x64
+		{26B8BC0B-779C-415B-8FA4-9ECB146A4635}.Release|x64.ActiveCfg = Release|x64
+		{26B8BC0B-779C-415B-8FA4-9ECB146A4635}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
