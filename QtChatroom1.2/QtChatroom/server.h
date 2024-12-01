@@ -9,14 +9,15 @@ public:
 	Server(QObject* parent = 0, int port = 0);
 private:
 	const qsizetype headerLength = 4;
-	QVector<QTcpSocket*> tcpClientSocketList;
+	QVector<ClientSocket*> tcpClientSocketList;
 	//QVector<>
 	QByteArray bigBuffer;
 
 
 
-	void extractMessages();
+	void extractMessages(ClientSocket*);
 	void updateClients(QString);
+	void updateClientName(QString, ClientSocket*);
 
 signals:
 	void updateServer(QString);

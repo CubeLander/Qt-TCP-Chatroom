@@ -38,7 +38,7 @@ TcpClient::TcpClient(QWidget* parent, Qt::WindowFlags f)
 
     connect(enterBtn, SIGNAL(clicked()), this, SLOT(slotEnter()));
     connect(sendBtn, SIGNAL(clicked()), this, SLOT(slotSend()));
-    connect(tcpSocket, SIGNAL(disconnected()), this, SLOT(clientDisconnected));
+    //connect(tcpSocket, SIGNAL(disconnected()), this, SLOT(clientDisconnected));
     connect(connectTimer, &QTimer::timeout, this, &TcpClient::slotTimeout);
 
     sendBtn->setEnabled(false);
@@ -87,7 +87,6 @@ void TcpClient::slotEnter() {
         //QString msg = tr("%1 leaves chat room").arg(userName);
         //Send(msg);
         tcpSocket->disconnectFromHost(); 
-        status = false;
     
     
     }
@@ -116,7 +115,8 @@ void TcpClient::slotConnected() {
     sendBtn->setEnabled(true);
     status = 1;
     enterBtn->setText(tr("离开"));
-    QString msg = tr("%1 enters chat Room\0").arg(userName);
+    //QString msg = tr("%1 enters chat Room\0").arg(userName);
+    QString msg = userName;
     Send(msg);
 }
 
@@ -130,6 +130,7 @@ void TcpClient::slotSend() {
 }
 
 void TcpClient::clientDisconnected() {
+    status = false;
     sendBtn->setEnabled(false);
     enterBtn->setText(tr("进入聊天室"));
 }

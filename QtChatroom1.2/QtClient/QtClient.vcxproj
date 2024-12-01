@@ -11,12 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3974859B-394A-4DA1-915C-5344DAC32000}</ProjectGuid>
+    <ProjectGuid>{26B8BC0B-779C-415B-8FA4-9ECB146A4635}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
-    <ProjectName>QtServer</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -38,12 +37,12 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>Qt6.8.0</QtInstall>
-    <QtModules>core;network;widgets</QtModules>
+    <QtModules>core;gui;network;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>Qt6.8.0</QtInstall>
-    <QtModules>core;network;widgets</QtModules>
+    <QtModules>core;gui;network;widgets</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -93,22 +92,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ClientSocket.cpp" />
+    <ClCompile Include="TcpClient.cpp" />
+    <QtRcc Include="QtClient.qrc" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="server.cpp" />
-    <ClCompile Include="TcpServer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="server.h" />
+    <QtMoc Include="TcpClient.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="TcpServer.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="TcpServer.ui" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ClientSocket.h" />
+    <QtUic Include="TcpClient.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

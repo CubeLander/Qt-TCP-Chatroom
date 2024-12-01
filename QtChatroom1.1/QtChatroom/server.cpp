@@ -11,6 +11,7 @@ Server::Server(QObject* parent, int port) :QTcpServer(parent) {
 
 void Server::connectionCame() {
 	QTcpSocket* tcpClientSocket = this->nextPendingConnection();
+	tcpClientSocket->socketDescriptor();
 	tcpClientSocketList.append(tcpClientSocket);
 
 	connect(tcpClientSocket, SIGNAL(readyRead()), this, SLOT(dataReceived()));
